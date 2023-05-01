@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import {FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
+    const {createUser} = useContext(AuthContext)
+    
+    const loginHandling = (event) =>{
+        event.preventDefault()
+        const form = event.target;
+        
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log( email,password)
+         
+       createUser(email, password)
+       .then(result =>{
+        const createUser = result.user;
+       })
+       .catch(error =>{
+
+        console.log(error)
+       })
+        
+
+    }
     return (
         <div>
             <div className="hero bg-base-200 w-1/2 mx-auto mb-10 mt-4 p-4">
@@ -12,7 +35,7 @@ const Login = () => {
     
                 </div>
                 <div className="card flex-shrink-0 w-96 shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form className="card-body" onSubmit={loginHandling}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>

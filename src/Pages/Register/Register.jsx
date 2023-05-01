@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {FaGithub, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../Providers/AuthProvider';
+
 
 const Register = () => {
-    
+    const {createUser} = useContext(AuthContext)
+    const [error, setError] = useState('')
     const registerHandling = (event) =>{
         event.preventDefault()
         const form = event.target;
@@ -14,6 +16,14 @@ const Register = () => {
 
         console.log(name, email,photo,password)
         
+        createUser(email,password)
+    .then(result =>{
+      const createdUser= result.user;
+      console.log(createdUser)
+    })
+    .catch(error=>{
+      setError(error.message)
+    })
 
     }
     return (
@@ -61,6 +71,7 @@ const Register = () => {
                         
                         </div>
                     </form>
+                    <span>{error}</span>
                     <p className='mb-4 ml-6'>
                     Already sign in? Please Login
                     <Link to='/login' className="label-text-alt link link-hover text-purple-700">
