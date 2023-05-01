@@ -6,9 +6,9 @@ const Login = () => {
     return (
         <div>
             <div className="hero bg-base-200 w-1/2 mx-auto mb-10 mt-4 p-4">
-            <div className="hero-content flex-col ">
+            <div className="hero-content flex-col">
                 <div className="text-center mb-4">
-                    <h1 className="text-5xl font-bold title-text">Login now!</h1>
+                    <h1 className="text-3xl font-bold title-text">Login now!</h1>
     
                 </div>
                 <div className="card flex-shrink-0 w-96 shadow-2xl bg-base-100">
@@ -25,21 +25,21 @@ const Login = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-700">
-                            <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-800 via-purple-600 to-pink-700"></span>
-                                <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-800 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                                <span class="relative text-white">
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-800 via-purple-600 to-pink-700"></span>
+                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-800 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+                                <span className="relative text-white">
                                 Login</span></button>
 
                         
                         </div>
                     </form>
                     <p className='mb-4 ml-6'>
-                    New to Cooking Alchemist?Please 
+                    New to Cooking Alchemist? Please 
                     <Link to='/register' className="label-text-alt link link-hover text-purple-700">
                         <span className='text-xl ml-1 font-bold'>Register</span>
                     </Link>
@@ -48,8 +48,8 @@ const Login = () => {
                     <div className='mb-4'>
                         <p className='mt-2 text-xl ml-6'>Sign in with: </p>
                     <div className='text-center'>
-                    <button class="btn btn-primary mr-1"><FaGoogle /></button>
-                    <button  class="btn btn-primary"><FaGithub /></button>
+                    <button className="btn btn-primary mr-1"><FaGoogle /></button>
+                    <button  className="btn btn-primary"><FaGithub /></button>
                     </div>
                     </div>
             </div>
