@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null)
@@ -9,24 +9,41 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+    const [name, setName ]= useState("")
+
+    const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
+
+    const signInWithGoogle = () =>{
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const signInWithGithub = () =>{
+        setLoading(true);
+        return signInWithPopup(auth, gitHubProvider)
+    }
+    const handleName= event =>{
+        setName(event.target.form.name.value)
+    }
 
     const createUser = (email, password ) =>{
-        setLoading(true)
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const signInUser = (email, password) =>{
-        setLoading(true)
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email,password)
     }
     const logOut = () =>{
-        setLoading(true)
-        return signOut(auth)
+        setLoading(true);
+        return signOut(auth);
     }
 
     useEffect(()=>{
         const unsubscribe =  onAuthStateChanged(auth,loggedUser =>{
-            setUser(loggedUser)
-            setLoading(false)
+            setUser(loggedUser);
+            setLoading(false);
         })
         return () =>{
             unsubscribe();
@@ -39,6 +56,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signInUser,
         logOut, 
+        signInWithGoogle,
+        signInWithGithub,
+        handleName
 
     }
     return (

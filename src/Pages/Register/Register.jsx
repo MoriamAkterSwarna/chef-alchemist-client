@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import {FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser,handleName,} = useContext(AuthContext)
     const [error, setError] = useState('')
     const registerHandling = (event) =>{
         event.preventDefault()
@@ -79,7 +80,7 @@ const Register = () => {
                     </Link>
                     </p>
 
-                
+                    
                     </div>
             </div>
             </div>

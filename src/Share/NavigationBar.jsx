@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
+import { AuthContext } from '../Providers/AuthProvider';
 
 const NavigationBar = () => {
+  const {user,logOut} = useContext(AuthContext);
+  console.log(user)
+  // const {photoURL} = user;
     
   const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
@@ -18,17 +22,23 @@ const NavigationBar = () => {
                 <li>
                     <NavLink to='/' 
                     title='Home'
-                    className={({isActive}) => (isActive ? 'active' : 'default:')}>Home</NavLink>
+                    className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/blog' className={({isActive}) => (isActive ? 'active' : 'default:')}>Blog</NavLink>
+                    <NavLink to='/blog' className={({isActive}) => (isActive ? 'active' : 'default')}>Blog</NavLink>
                 </li>
                
                 
             </ul>
-            <div className='nav-end font-bold'>
-              <Link className='btn mr-2' to='/register'>Register</Link>
-                <Link className='btn' to='/login'>Login</Link>
+            <div className='nav-end font-bold flex items-center'>
+              <span><img src={user?.photoURL} className='rounded-full w-1/2' alt="" /></span>
+              
+              {
+                user ? <Link className='btn' onClick={logOut}>Sign out</Link>
+                : <Link className='btn' to='/login'>Login</Link>
+
+              }
+                
 
             </div>
 
@@ -88,8 +98,12 @@ const NavigationBar = () => {
                     </li>
                   </ul>
                   <div className='font-bold flex flex-col'>
-                  <Link className='btn w-1/5' to='/register'>Register</Link>
-                    <Link className='btn w-1/5 mt-2' to='login'>Login</Link>
+                  
+                  <span><img src={photoURL} className='rounded-full w-1/2' alt="" /></span>
+                    {
+                      user ? <Link className='btn w-1/5' onClick={logOut}>Sign out</Link> :
+                      <Link className='btn w-1/5 mt-2' to='login'>Login</Link>
+                    }
                   </div>
                 </nav>
               </div>

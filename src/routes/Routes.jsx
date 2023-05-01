@@ -5,6 +5,7 @@ import {
 import LoginLayout from '../layout/LoginLayout';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import PrivateRoutes from './PrivateRoutes';
 
     const router = createBrowserRouter([
         {
@@ -17,7 +18,7 @@ import Register from '../Pages/Register/Register';
             },
             {
               path: '/register',
-              element: <Register></Register>
+              element: <PrivateRoutes><Register></Register></PrivateRoutes>
             }
 
           ]
