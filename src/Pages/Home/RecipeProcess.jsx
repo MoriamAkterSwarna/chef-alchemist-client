@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const RecipeProcess = ({recipes}) => {
+    const [favorite, setFavorite] =useState(false)
+
     console.log(recipes);
-    const{recipe_name,ingredients,cooking_method} =recipes
+    const{recipe_name,ingredients,cooking_method} =recipes;
+    
+    const handleFavorite = () => {
+        toast.success('Successfully Bookmarked!');
+        setFavorite(true)
+    }
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl border-2 mb-10">
@@ -27,10 +35,11 @@ const RecipeProcess = ({recipes}) => {
     </div>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Add to Favorites</button>
+      <button className="btn btn-primary" onClick={handleFavorite} disabled={favorite}>Add to Favorites</button>
     </div>
   </div>
 </div>
+<Toaster />
         </div>
     );
 };
