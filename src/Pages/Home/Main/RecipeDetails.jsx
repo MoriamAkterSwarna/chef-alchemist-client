@@ -9,7 +9,7 @@ const RecipeDetails = () => {
     return (
         <div>
             {
-                recipeDetail.map(recipeDetail => <SingleRecipeDetail key={recipeDetail.id} recipeDetail={recipeDetail}></SingleRecipeDetail>)
+                recipeDetail.map(recipeDetail => <SingleRecipeDetail key={recipeDetail._id} recipeDetail={recipeDetail}></SingleRecipeDetail>)
             }
         </div>
     );
