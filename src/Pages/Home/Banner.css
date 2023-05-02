@@ -1,0 +1,11 @@
+.banner {
+    background: url('../../assets//bannerPic.jpg');
+    background-position: center;
+    height: 39rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: darken, luminosity;
+    background-size: cover;
+    object-fit: cover;
+    opacity: 0.9;
+  }

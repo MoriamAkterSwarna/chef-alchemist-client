@@ -11,7 +11,7 @@
   }
   
     .btn-primary{
-        @apply font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 m-2 text-lg rounded-full border-transparent border-2  text-gray-700 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 focus:ring-4 focus:outline-none focus:ring-purple-200
+        @apply font-medium  transition duration-200  shadow-md  md:mb-0 px-4 py-2 md:px-8 md:py-3 text-lg rounded-full border-transparent border-2  text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 focus:ring-4 focus:outline-none focus:ring-purple-200
       }
   
   @layer utilities{

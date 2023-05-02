@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
 import { AuthContext } from '../Providers/AuthProvider';
+import Header from './Header';
 
 const NavigationBar = () => {
   const {user,logOut} = useContext(AuthContext);
@@ -10,11 +11,12 @@ const NavigationBar = () => {
     
   const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
+        <>
         <div className='bg-gray-100 flex justify-between items-center p-5 rounded sm:max-w-xl md:max-w-full  md:px-24 lg:px-8'>
             {/* logo */}
             <Link to='/' className='inline-flex items-center relative navbar-start'>
                 
-                <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
+                <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
             </Link>
 
             {/* navigation item */}
@@ -34,8 +36,8 @@ const NavigationBar = () => {
               <span><img src={user?.photoURL} className='rounded-full w-1/2' alt="" /></span>
               
               {
-                user ? <Link className='btn' onClick={logOut}>Sign out</Link>
-                : <Link className='btn' to='/login'>Login</Link>
+                user ? <Link className='btn btn-primary' onClick={logOut}>Sign out</Link>
+                : <Link className='btn btn-primary' to='/login'>Login</Link>
 
               }
                 
@@ -80,17 +82,17 @@ const NavigationBar = () => {
                 <nav>
                   <ul className='space-y-4'>
                     <li>
-                      <Link to='/' className='default'>
-                        Home
-                      </Link>
+                    <NavLink to='/' 
+                    title='Home'
+                    className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to='/blog'
                         className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
                       >
                         Blog
-                      </Link>
+                      </NavLink>
                     </li>
           
                     <li>
@@ -99,10 +101,10 @@ const NavigationBar = () => {
                   </ul>
                   <div className='font-bold flex flex-col'>
                   
-                  <span><img src={photoURL} className='rounded-full w-1/2' alt="" /></span>
+                  <span><img src={user?.photoURL} className='rounded-full w-1/2' alt="" /></span>
                     {
-                      user ? <Link className='btn w-1/5' onClick={logOut}>Sign out</Link> :
-                      <Link className='btn w-1/5 mt-2' to='login'>Login</Link>
+                      user ? <Link className='btn btn-primary w-1/3 mt-2' onClick={logOut}>Sign out</Link> :
+                      <Link className='btn btn-primary w-1/3 mt-2' to='login'>Login</Link>
                     }
                   </div>
                 </nav>
@@ -112,6 +114,10 @@ const NavigationBar = () => {
 
             </div>
         </div>
+        <div>
+          <Header></Header>
+        </div>
+        </>
     );
                     }
 
