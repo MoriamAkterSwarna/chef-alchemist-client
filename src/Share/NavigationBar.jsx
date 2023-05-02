@@ -33,7 +33,7 @@ const NavigationBar = () => {
                 
             </ul>
             <div className='nav-end font-bold flex items-center'>
-              <span><img src={user?.photoURL} className='rounded-full w-1/2' alt="" /></span>
+              <span><img src={user?.photoURL} className='rounded-full w-[60px]' alt="" /></span>
               
               {
                 user ? <Link className='btn btn-primary' onClick={logOut}>Sign out</Link>

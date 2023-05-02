@@ -24,7 +24,7 @@ import RecipeDetails from '../Pages/Home/Main/RecipeDetails';
             },
             {
               path: 'register',
-              element: <PrivateRoutes><Register></Register></PrivateRoutes>
+              element: <Register></Register>
             },
             {
               path: '/home',
@@ -43,7 +43,7 @@ import RecipeDetails from '../Pages/Home/Main/RecipeDetails';
           children:[
             {
               path:':id',
-              element:<RecipeDetails></RecipeDetails>,
+              element:<PrivateRoutes><RecipeDetails></RecipeDetails></PrivateRoutes>,
               loader:({params}) => fetch(`http://localhost:5000/recipe/${params.id}`)
             }
           ]

@@ -13,7 +13,7 @@ const RecipeProcess = ({recipes}) => {
     }
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl border-2 mb-10">
+            <div className="card w-96 bg-base-100 shadow-xl border-2 mb-10 mx-auto">
   <div className="card-body">
     <h2 className="card-title"><span className='font-bold'>Recipe: </span>{recipe_name}</h2>
 

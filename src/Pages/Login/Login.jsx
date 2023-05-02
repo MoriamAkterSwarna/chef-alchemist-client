@@ -38,6 +38,8 @@ const Login = () => {
         signInWithGoogle()
         .then(result => {
             const loggedUser = result.user;
+            navigate(from ,{replace: true})
+           
             
         })
         .catch(error => console.log(error))
@@ -54,7 +56,7 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="hero bg-base-200 w-1/2 mx-auto mb-10 mt-4 p-4">
+            <div className="hero bg-base-200 lg:w-1/2 mx-auto mb-10 mt-4 p-4">
             <div className="hero-content flex-col">
                 <div className="text-center mb-4">
                     <h1 className="text-3xl font-bold title-text">Login now!</h1>
