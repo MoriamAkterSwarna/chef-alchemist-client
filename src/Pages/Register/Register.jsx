@@ -74,7 +74,7 @@ const Register = () => {
                     </form>
                     <span>{error}</span>
                     <p className='mb-4 ml-6'>
-                    Already sign in? Please Login
+                    Already sign in? Please
                     <Link to='/login' className="label-text-alt link link-hover text-purple-700">
                         <span className='text-xl ml-1 font-bold'>Login</span>
                     </Link>

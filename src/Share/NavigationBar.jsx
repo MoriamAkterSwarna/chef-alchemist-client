@@ -22,7 +22,7 @@ const NavigationBar = () => {
             {/* navigation item */}
             <ul className='lg:flex space-x-8 items-center font-bold hidden navbar-center'>
                 <li>
-                    <NavLink to='/' 
+                    <NavLink to='/home' 
                     title='Home'
                     className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                 </li>
@@ -82,7 +82,7 @@ const NavigationBar = () => {
                 <nav>
                   <ul className='space-y-4'>
                     <li>
-                    <NavLink to='/' 
+                    <NavLink to='/home' 
                     title='Home'
                     className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                     </li>
@@ -115,7 +115,7 @@ const NavigationBar = () => {
             </div>
         </div>
         <div>
-          <Header></Header>
+          
         </div>
         </>
     );
