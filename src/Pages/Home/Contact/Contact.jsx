@@ -22,20 +22,20 @@ const Contact = () => {
             <h2 className='text-center font-bold text-3xl text-purple-600 mt-6 pt-4'>Contact Us</h2>
     
 
-    <form ref={form} onSubmit={sendEmail} className="card-body p-6" >
-                        <div className="form-control w-1/2">
+    <form ref={form} onSubmit={sendEmail} className="card-body p-6 lg:ms-52" >
+                        <div className="form-control sm:w-full lg:w-1/2">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name='from_name' placeholder="name" className="input input-bordered" required/>
                         </div>
-                        <div className="form-control w-1/2">
+                        <div className="form-control sm:w-full lg:w-1/2">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name='from_email' placeholder="email" className="input input-bordered" required/>
                         </div>
-                        <div className="form-control w-1/2">
+                        <div className="form-co sm:w-full lg:w-1/2">
                             <label className="label">
                                 <span className="label-text">Message: </span>
                             </label>
