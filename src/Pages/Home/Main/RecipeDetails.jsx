@@ -1,11 +1,13 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData,  useParams } from 'react-router-dom';
 import SingleRecipeDetail from './SingleRecipeDetail';
 
+
 const RecipeDetails = () => {
+    
     const {id} = useParams();
     const recipeDetail =useLoaderData();
-    console.log(recipeDetail)
+    // console.log(recipeDetail)
     return (
         <div>
             {

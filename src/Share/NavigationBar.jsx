@@ -2,24 +2,26 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
 import { AuthContext } from '../Providers/AuthProvider';
-import Header from './Header';
+
+
+
 
 const NavigationBar = () => {
   const {user,logOut} = useContext(AuthContext);
-  console.log(user)
-  // const {photoURL} = user;
+  // console.log(user)
+  
     
   const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
         <>
         <div className='bg-gray-100 flex justify-between items-center p-5 rounded sm:max-w-xl md:max-w-full  md:px-24 lg:px-8'>
-            {/* logo */}
+           
             <Link to='/' className='inline-flex items-center relative navbar-start'>
                 
                 <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
             </Link>
 
-            {/* navigation item */}
+            {/* nav item */}
             <ul className='lg:flex space-x-8 items-center font-bold hidden navbar-center'>
                 <li>
                     <NavLink to='/home' 
@@ -33,7 +35,13 @@ const NavigationBar = () => {
                 
             </ul>
             <div className='nav-end font-bold flex items-center'>
-              <span><img src={user?.photoURL} className='rounded-full w-[60px]' alt="" /></span>
+              <span>
+                          
+    <img src={user?.photoURL} className='rounded-full w-[60px]' alt="" />
+    
+ 
+    </span>
+                
               
               {
                 user ? <Link className='btn btn-primary' onClick={logOut}>Sign out</Link>

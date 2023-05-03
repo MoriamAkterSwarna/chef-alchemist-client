@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import SingleRecipe from './SingleRecipe';
 
+
 const RecipeCards = () => {
+   
     const [recipe, setRecipe] = useState([]);
     useEffect(() =>{
         fetch("http://localhost:5000/category")

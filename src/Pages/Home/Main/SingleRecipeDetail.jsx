@@ -8,13 +8,13 @@ const SingleRecipeDetail = ({recipeDetail}) => {
     } =recipeDetail;
     return (
        <>
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-10 lg:pl-10 py-10 bg-purple-100'>
-            <div>
-            <LazyLoad width={1024} height={762} offset={300}>
-                <img src={picture} className='rounded-full' alt="" />
+        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-10 lg:pl-10 pt-10 bg-purple-100'>
+            <div className='lg:ml-20'>
+            <LazyLoad className='w-full sm:h-[90vh] lg:h-[500px]'  offset={300}>
+                <img src={picture} className='rounded-full sm:w-1/2 lg:w-4/5' alt="" />
                 </LazyLoad>
             </div>
-            <div className='sm:mt-2 lg:ml-20 lg:mt-40'>
+            <div className='sm:mt-10 lg:ml-10 lg:mt-32'>
                 <h3 className='text-2xl font-bold text-fuchsia-700'>Chef Name: {name}</h3>
                 <p className='mt-3'><span className='font-bold text-xl'>Short Description: </span>{description}</p>
                 <p className='mt-6'><span className='font-bold text-xl'>Likes:</span> {likes}</p>
@@ -26,7 +26,7 @@ const SingleRecipeDetail = ({recipeDetail}) => {
             
            
         </div>
-         <div className='grid grid-cols-3'>
+         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
          {
             recipes.map(recipes => <RecipeProcess key={recipes._id} recipes={recipes}></RecipeProcess>)
         }

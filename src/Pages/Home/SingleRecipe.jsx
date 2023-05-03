@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleRecipe = ({recipe}) => {
-    console.log(recipe)
+    // console.log(recipe)
     const {_id,likes,name,num_recipes,years_of_experience,picture,category__id} = recipe;
-    console.log(category__id)
+    // console.log(category__id)
     return (
         <div className='my-10 w-full'>
             <div className="card card-side bg-base-100 shadow-lg sm:w-[50%] md:w-full lg:w-[90%] mx-auto">

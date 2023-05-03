@@ -7,16 +7,16 @@ const Blog = () => {
     const ref = React.createRef();
     return (
         <div>
-            <div className="App text-center mt-4 lg:mb-72">
+            <div className="App mt-4 lg:mb-72">
       <Pdf targetRef={ref} filename="Blog.pdf">
-        {({ toPdf }) =>(<div>
-        <p>PDF</p> <button onClick={toPdf} ><FaFilePdf className='text-red-700 h-12 w-12'></FaFilePdf></button>
+        {({ toPdf }) =>(<div  className=' text-center'>
+        <p >PDF</p> <button onClick={toPdf}><FaFilePdf className='text-red-700 h-12 w-12'></FaFilePdf></button>
             </div>)}
       </Pdf>
       <div ref={ref}>
-        <h1 className='text-fuchsia-500 text-2xl font-bold'>Learn More about React and Node js </h1>
+        <h1 className='text-fuchsia-500 text-3xl font-bold ml-6'>Learn More about React and Node js </h1>
         <div className='grid grid-cols-1 gap-10 m-6'>
-        <div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500 bg-violet-400 rounded-box w-1/2 mx-auto">
+        <div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500 bg-violet-400 rounded-box w-1/2">
   <div className="collapse-title text-xl font-medium overflow-clip">
   Tell us the differences between uncontrolled and controlled components.
   </div>
@@ -30,7 +30,7 @@ const Blog = () => {
     </div>
   </div>
 </div>
-<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500   rounded-box bg-red-400 w-1/2 mx-auto">
+<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500   rounded-box bg-red-400 w-1/2">
   <div className="collapse-title text-xl font-medium">
   How to validate React props using PropTypes
   </div>
@@ -45,7 +45,7 @@ It's important to note that PropTypes are not enforced in production mode, so it
 </p>
   </div>
 </div>
-<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500  rounded-box w-1/2 bg-violet-400 mx-auto">
+<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500  rounded-box w-1/2 bg-violet-400">
   <div className="collapse-title text-xl font-medium">
   Tell us the difference between nodejs and express js.
   </div>
@@ -66,7 +66,7 @@ It's important to note that PropTypes are not enforced in production mode, so it
     </div>
   </div>
 </div>
-<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500  rounded-box w-1/2  bg-red-400 mx-auto">
+<div tabIndex={0} className="collapse collapse-arrow border-2 border-fuchsia-500  rounded-box w-1/2  bg-red-400">
   <div className="collapse-title text-xl font-medium">
   What is a custom hook, and why will you create a custom hook?
   </div>
