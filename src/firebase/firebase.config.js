@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment variable', import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyBByoigW9SSrV7C256sW0T0cSAtUOpnXRU",
-  authDomain: "cooking-alchemist.firebaseapp.com",
-  projectId: "cooking-alchemist",
-  storageBucket: "cooking-alchemist.appspot.com",
-  messagingSenderId: "926800846664",
-  appId: "1:926800846664:web:d729e0cfe3b85d0a121d7d"
+  apiKey: import.meta.env.VITE_apiKey ,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderIdz,
+  appId:import.meta.env.VITE_appId 
 };
 
 // Initialize Firebase

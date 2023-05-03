@@ -8,10 +8,10 @@ const Blog = () => {
     return (
         <div>
             <div className="App text-center mt-4 lg:mb-72">
-      <Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) =><div>
+      <Pdf targetRef={ref} filename="Blog.pdf">
+        {({ toPdf }) =>(<div>
         <p>PDF</p> <button onClick={toPdf} ><FaFilePdf className='text-red-700 h-12 w-12'></FaFilePdf></button>
-            </div>}
+            </div>)}
       </Pdf>
       <div ref={ref}>
         <h1 className='text-fuchsia-500 text-2xl font-bold'>Learn More about React and Node js </h1>
