@@ -4,7 +4,6 @@ import toast, { Toaster } from 'react-hot-toast';
 const RecipeProcess = ({recipes}) => {
     const [favorite, setFavorite] =useState(false)
 
-    console.log(recipes);
     const{recipe_name,ingredients,cooking_method,rating} =recipes;
     
     const handleFavorite = () => {

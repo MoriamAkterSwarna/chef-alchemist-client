@@ -7,7 +7,7 @@ const RecipeDetails = () => {
     
     const {id} = useParams();
     const recipeDetail =useLoaderData();
-    // console.log(recipeDetail)
+
     return (
         <div>
             {

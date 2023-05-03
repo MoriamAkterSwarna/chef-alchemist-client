@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleLatestRecipe = ({latest}) => {
-    console.log(latest)
+    
     const {recipe_name,latest_recipe_id,recipe_type,img,health_benefit} =latest
     return (
         <div>

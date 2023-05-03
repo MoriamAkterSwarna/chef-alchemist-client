@@ -3,14 +3,14 @@ import RecipeProcess from '../RecipeProcess';
 import LazyLoad from 'react-lazy-load';
 
 const SingleRecipeDetail = ({recipeDetail}) => {
-    console.log(recipeDetail)
+   
     const {_id,likes,name,num_recipes,years_of_experience,picture,category__id,description,recipes
     } =recipeDetail;
     return (
        <>
         <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-10 lg:pl-10 pt-10 bg-purple-100'>
-            <div className='lg:ml-20'>
-            <LazyLoad className='w-full sm:h-[90vh] lg:h-[500px]'  offset={300}>
+            <div>
+            <LazyLoad className='sm:w-1/3 lg:w-full sm:h-[90vh] lg:h-[500px]'  offset={300}>
                 <img src={picture} className='rounded-full sm:w-1/2 lg:w-4/5' alt="" />
                 </LazyLoad>
             </div>

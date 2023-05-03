@@ -6,7 +6,6 @@ const LatestRecipe = () => {
     useEffect(() =>{
         fetch("https://cooking-alchemist-server-moriamakterswarna.vercel.app/latest")
         .then(res => res.json())
-        // .then(data => setLatest(data))
         .then(data => setLatest(data))
     },[])
     return (

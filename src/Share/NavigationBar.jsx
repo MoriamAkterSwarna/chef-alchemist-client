@@ -9,6 +9,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 const NavigationBar = () => {
   const {user,logOut} = useContext(AuthContext);
   // console.log(user)
+  const {displayName} =user;
   
     
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,7 +38,7 @@ const NavigationBar = () => {
             <div className='nav-end font-bold flex items-center'>
               <span>
                           
-    <img src={user?.photoURL} className='rounded-full w-[60px]' alt="" />
+    <img src={user?.photoURL} title={displayName} className='rounded-full w-[60px]' alt="" />
     
  
     </span>
@@ -109,7 +110,7 @@ const NavigationBar = () => {
                   </ul>
                   <div className='font-bold flex flex-col'>
                   
-                  <span><img src={user?.photoURL} className='rounded-full w-1/2' alt="" /></span>
+                  <span><img src={user?.photoURL} title={displayName} className='rounded-full w-1/2' alt="" /></span>
                     {
                       user ? <Link className='btn btn-primary w-1/3 mt-2' onClick={logOut}>Sign out</Link> :
                       <Link className='btn btn-primary w-1/3 mt-2' to='login'>Login</Link>

@@ -35,7 +35,7 @@ const Contact = () => {
                             </label>
                             <input type="email" name='from_email' placeholder="email" className="input input-bordered" required/>
                         </div>
-                        <div className="form-co sm:w-full lg:w-1/2">
+                        <div className="form-control sm:w-full lg:w-1/2 mr-2">
                             <label className="label">
                                 <span className="label-text">Message: </span>
                             </label>
