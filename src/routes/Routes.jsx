@@ -44,7 +44,7 @@ import RecipeDetails from '../Pages/Home/Main/RecipeDetails';
             {
               path:':id',
               element:<PrivateRoutes><RecipeDetails></RecipeDetails></PrivateRoutes>,
-              loader:({params}) => fetch(`http://localhost:5000/recipe/${params.id}`)
+              loader:({params}) => fetch(`https://cooking-alchemist-server-moriamakterswarna.vercel.app/recipe/${params.id}`)
             }
           ]
         }

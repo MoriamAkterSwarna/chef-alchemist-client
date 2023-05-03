@@ -4,7 +4,7 @@ import SingleLatestRecipe from './SingleLatestRecipe';
 const LatestRecipe = () => {
     const [latest, setLatest] = useState([])
     useEffect(() =>{
-        fetch("http://localhost:5000/latest")
+        fetch("https://cooking-alchemist-server-moriamakterswarna.vercel.app/latest")
         .then(res => res.json())
         // .then(data => setLatest(data))
         .then(data => setLatest(data))

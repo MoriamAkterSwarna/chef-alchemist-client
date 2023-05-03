@@ -6,7 +6,7 @@ const RecipeCards = () => {
    
     const [recipe, setRecipe] = useState([]);
     useEffect(() =>{
-        fetch("http://localhost:5000/category")
+        fetch("https://cooking-alchemist-server-moriamakterswarna.vercel.app/category")
         .then(res => res.json())
         .then(data => setRecipe(data))
     },[])

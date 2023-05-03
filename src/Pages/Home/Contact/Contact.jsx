@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import toast, { Toaster } from 'react-hot-toast';
 const Contact = () => {
     const form = useRef();
     const sendEmail = (e) => {
@@ -9,26 +9,46 @@ const Contact = () => {
         emailjs.sendForm('service_zzvhufj', 'template_fcuokhl', form.current, 'W7jPBdlhtE8V0jDOA')
           .then((result) => {
               console.log(result.text);
+              toast.success('Feedback Sent!');
+
           }, (error) => {
               console.log(error.text);
           });
       };
     
     return (
-        <div className='h-[70vh] w-1/2 bg-purple-200 mx-auto mb-10 rounded'>
-            <h2 className='text-center font-bold text-3xl text-purple-600 mt-4'>Contact Us</h2>
-    <form ref={form} onSubmit={sendEmail} className='p-6'>
-      <label>Name: </label>
-      <input type="text" name="from_name" />
-      <br /> <br />
-      <label >Email: </label>
-    <input type="email" name="from_email" />
-    <br /> <br />
-      <label>Message: </label>
-      <textarea className='p-4' name="message" /> <br /><br />
-      <input className='btn-primary' type="submit" value="Send" />
-    </form>
+       <>
+        <div className=' w-1/2 bg-purple-200 mx-auto mb-10 rounded '>
+            <h2 className='text-center font-bold text-3xl text-purple-600 mt-6 pt-4'>Contact Us</h2>
+    
+
+    <form ref={form} onSubmit={sendEmail} className="card-body p-6" >
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='from_name' placeholder="name" className="input input-bordered" required/>
+                        </div>
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="email" name='from_email' placeholder="email" className="input input-bordered" required/>
+                        </div>
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text">Message: </span>
+                            </label>
+                            <textarea className='p-4' name="message" />
+                        </div>
+                        
+                        <div className="form-control mt-6">
+                        <input className='btn-primary w-1/2' type="submit" value="Send" />
+
+                        </div>
+                    </form>
         </div>
+        <Toaster /></>
     );
 };
 
