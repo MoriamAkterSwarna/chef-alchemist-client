@@ -5,7 +5,7 @@ const SingleLatestRecipe = ({latest}) => {
     const {recipe_name,latest_recipe_id,recipe_type,img,health_benefit} =latest
     return (
         <div>
-           <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+           <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-10">
   <figure><img src={img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
