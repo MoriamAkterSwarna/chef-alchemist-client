@@ -18,8 +18,8 @@ const Contact = () => {
     
     return (
        <>
-        <div className=' w-1/2 bg-purple-200 mx-auto mb-10 rounded '>
-            <h2 className='text-center font-bold text-3xl text-purple-600 mt-6 pt-4'>Contact Us</h2>
+        <div className=' w-1/2 bg-emerald-100 mx-auto mb-10 rounded '>
+            <h2 className='text-center font-bold text-3xl text-emerald-600 mt-6 pt-4'>Contact Us</h2>
     
 
     <form ref={form} onSubmit={sendEmail} className="card-body p-6 lg:ms-52" >

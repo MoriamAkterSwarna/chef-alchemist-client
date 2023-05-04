@@ -12,7 +12,7 @@ const ErrorPage = () => {
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512 512'
-          className='w-40 h-40 text-purple-400'
+          className='w-40 h-40 text-emerald-400'
         >
           <path
             fill='currentColor'
@@ -36,7 +36,7 @@ const ErrorPage = () => {
         </svg>
        
         <div className='max-w-md text-center'>
-          <h2 className='mb-8 font-extrabold text-9xl text-purple-400'>
+          <h2 className='mb-8 font-extrabold text-9xl text-emerald-400'>
             <span className='sr-only'>Error</span> {status || 404}
           </h2>
           <p className='text-2xl font-semibold md:text-3xl mb-8'>

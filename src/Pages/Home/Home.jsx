@@ -4,7 +4,10 @@ import RecipeCards from './RecipeCards';
 import LatestRecipe from './Latest/LatestRecipe';
 import Contact from './Contact/Contact';
 
+
+
 const Home = () => {
+
     return (
         <div>
             <Banner></Banner>

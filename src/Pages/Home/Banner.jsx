@@ -3,8 +3,10 @@ import './Banner.css'
 import LazyLoad from 'react-lazy-load';
 
 
+
 const Banner = () => {
     return (
+
         <div className='banner sm:w-full relative'>
            
            

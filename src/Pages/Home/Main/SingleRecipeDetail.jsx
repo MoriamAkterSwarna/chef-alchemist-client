@@ -8,10 +8,12 @@ const SingleRecipeDetail = ({recipeDetail}) => {
     } =recipeDetail;
     return (
        <>
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-10 lg:pl-10 pt-10 bg-purple-100'>
+        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-10 lg:pl-10 pt-10 bg-emerald-100'>
             <div>
             <LazyLoad className='sm:w-1/3 lg:w-full sm:h-[90vh] lg:h-[500px]'  offset={300}>
-                <img src={picture} className='rounded-full sm:w-1/2 lg:w-4/5' alt="" />
+                <figure className='h-96 overflow-hidden'>
+                <img src={picture} className='rounded-full lg:h-full   sm:w-1/2 lg:w-4/5 object-cover' alt="" />
+                </figure>
                 </LazyLoad>
             </div>
             <div className='sm:mt-10 lg:ml-10 lg:mt-32'>

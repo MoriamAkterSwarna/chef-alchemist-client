@@ -5,7 +5,7 @@ import SingleRecipeDetail from './SingleRecipeDetail';
 
 const RecipeDetails = () => {
     
-    const {id} = useParams();
+    const {_id} = useParams();
     const recipeDetail =useLoaderData();
 
     return (

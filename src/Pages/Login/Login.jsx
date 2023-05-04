@@ -91,7 +91,7 @@ const Login = () => {
                     </form>
                     <p className='mb-4 ml-6'>
                     New to Cooking Alchemist? Please 
-                    <Link to='/register' className="label-text-alt link link-hover text-purple-700">
+                    <Link to='/register' className="label-text-alt link link-hover text-emerald-700">
                         <span className='text-xl ml-1 font-bold'>Register</span>
                     </Link>
                     </p>

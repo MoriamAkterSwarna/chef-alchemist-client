@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import SingleLatestRecipe from './SingleLatestRecipe';
 
+
 const LatestRecipe = () => {
+
+   
     const [latest, setLatest] = useState([])
     useEffect(() =>{
         fetch("https://cooking-alchemist-server-moriamakterswarna.vercel.app/latest")

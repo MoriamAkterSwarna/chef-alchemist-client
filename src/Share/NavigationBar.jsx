@@ -2,14 +2,18 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
 import { AuthContext } from '../Providers/AuthProvider';
+import logo from '../assets/logo.png'
 
 
 
 
 const NavigationBar = () => {
-  const {user,logOut} = useContext(AuthContext);
-  // console.log(user)
-  const {displayName} =user;
+  const {user,logOut,userDetails} = useContext(AuthContext);
+
+ 
+  console.log(user)
+
+ 
   
     
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,9 +21,9 @@ const NavigationBar = () => {
         <>
         <div className='bg-gray-100 flex justify-between items-center p-5 rounded sm:max-w-xl md:max-w-full  md:px-24 lg:px-8'>
            
-            <Link to='/' className='inline-flex items-center relative navbar-start'>
+            <Link to='/home' className='inline-flex items-center relative navbar-start'>
                 
-                <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
+                <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'><img className='w-1/6 rounded-full' src={logo} alt="" /></span>
             </Link>
 
             {/* nav item */}
@@ -38,8 +42,10 @@ const NavigationBar = () => {
             <div className='nav-end font-bold flex items-center'>
               <span>
                           
-    <img src={user?.photoURL} title={displayName} className='rounded-full w-[60px]' alt="" />
-    
+{
+  user && (<img src={user?.photoURL} title={user?.displayName} className='rounded-full w-[60px]' alt="" />
+  )
+}    
  
     </span>
                 
@@ -50,7 +56,7 @@ const NavigationBar = () => {
 
               }
                 
-
+                <Link className='btn btn-primary' to='/register'>Register</Link>
             </div>
 
             {/* Mobile nav menu  */}
@@ -98,7 +104,7 @@ const NavigationBar = () => {
                     <li>
                       <NavLink
                         to='/blog'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
+                        className={({isActive}) => (isActive ? 'active font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400' : 'default font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400')}
                       >
                         Blog
                       </NavLink>
@@ -110,7 +116,7 @@ const NavigationBar = () => {
                   </ul>
                   <div className='font-bold flex flex-col'>
                   
-                  <span><img src={user?.photoURL} title={displayName} className='rounded-full w-1/2' alt="" /></span>
+                  <span><img src={user?.photoURL ? user.photoURL: ''} title={user?.displayName} className='rounded-full w-1/2' alt="" /></span>
                     {
                       user ? <Link className='btn btn-primary w-1/3 mt-2' onClick={logOut}>Sign out</Link> :
                       <Link className='btn btn-primary w-1/3 mt-2' to='login'>Login</Link>

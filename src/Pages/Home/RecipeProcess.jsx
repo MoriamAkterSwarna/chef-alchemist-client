@@ -3,6 +3,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const RecipeProcess = ({recipes}) => {
     const [favorite, setFavorite] =useState(false)
+    const [fold, setFold] = useState(true)
 
     const{recipe_name,ingredients,cooking_method,rating} =recipes;
     
@@ -12,23 +13,25 @@ const RecipeProcess = ({recipes}) => {
     }
     return (
         <div >
-            <div className="card w-96 bg-base-100 shadow-xl border-2 mb-10 mx-auto ">
+            <div className="card w-96 bg-base-100 shadow-xl border-2 mb-10 mx-auto h-full ">
   <div className="card-body">
     <h2 className="card-title"><span className='font-bold'>Recipe: </span>{recipe_name}</h2>
 
     <div>
         <p className='font-bold'>Ingredients: </p>
-        <ol>
+        <>
         {
             ingredients.map(ing => <li>{ing}</li>)
         }
-    </ol>
+    </>
     </div>
     <div>
         <p className='font-bold'>Cooking Process: </p>
         <ol>
             {
+                
                 cooking_method.map(cooking => <p>{cooking}</p>)
+
             }
         </ol>
     </div>
