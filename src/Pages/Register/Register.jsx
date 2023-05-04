@@ -8,7 +8,7 @@ const auth =getAuth(app)
 const Register = () => {
     const {createUser,userDetails} = useContext(AuthContext);
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/home';
     const [errors, setErrors] = useState('')
     
     const registerHandling = (event) =>{
@@ -30,6 +30,7 @@ const Register = () => {
     .then(result =>{
       const createdUser= result.user;
       console.log(createdUser)
+      navigate(from ,{replace: true})
       userDetails(name,photo)
    
     
