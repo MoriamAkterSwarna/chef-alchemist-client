@@ -7,11 +7,17 @@ const RecipeCards = () => {
  
    
     const [recipe, setRecipe] = useState([]);
+    const [spinner, setSpinner] =useState(true);
     useEffect(() =>{
+        setSpinner(true)
         fetch("https://cooking-alchemist-server-moriamakterswarna.vercel.app/category")
         .then(res => res.json())
-        .then(data => setRecipe(data))
+        .then(data => {setRecipe(data)
+        setSpinner(false)})
     },[])
+    if(spinner){
+        return <progress className="progress w-96 bg-emerald-400 mx-auto"></progress>;
+    }
     return (
         <>
         <div className='text-center mt-10'>

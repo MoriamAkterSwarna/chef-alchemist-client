@@ -7,6 +7,7 @@ const Login = () => {
     const {signInUser,signInWithGithub, signInWithGoogle} = useContext(AuthContext)
     const navigate = useNavigate();
   const location = useLocation();
+  const [error, setError] = useState('')
   console.log(location);
   
   const from = location.state?.from?.pathname || '/';
@@ -14,6 +15,7 @@ const Login = () => {
 
     const loginHandling = (event) =>{
         event.preventDefault()
+        setError('')
         const form = event.target;
         
         const email = form.email.value;
@@ -29,7 +31,8 @@ const Login = () => {
        })
        .catch(error =>{
 
-        console.log(error)
+        console.log(error);
+        setError(error.message)
        })
         
 
@@ -89,13 +92,14 @@ const Login = () => {
                         
                         </div>
                     </form>
+                    <span className='text-red-500 mx-auto'>{error}</span>
                     <p className='mb-4 ml-6'>
                     New to Cooking Alchemist? Please 
                     <Link to='/register' className="label-text-alt link link-hover text-emerald-700">
                         <span className='text-xl ml-1 font-bold'>Register</span>
                     </Link>
                     </p>
-
+                    
                     <div className='mb-4'>
                         <p className='mt-2 text-xl ml-6'>Sign in with: </p>
                     <div className='text-center'>

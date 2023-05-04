@@ -13,6 +13,7 @@ const Register = () => {
     
     const registerHandling = (event) =>{
         event.preventDefault()
+        setErrors('')
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -20,6 +21,10 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(name, email,photo,password)
+        if(password.length < 6){
+            setErrors('Please add at least 6 characters in your password')
+            return;
+        }
         
         createUser(email,password,name,photo)
     .then(result =>{
@@ -80,7 +85,7 @@ const Register = () => {
                         
                         </div>
                  </form>
-                    <span>{errors}</span>
+                    <span className='text-red-500 mx-auto'>{errors}</span>
                                          <p className='mb-4 ml-6'>
                      Already sign in? Please
                      <Link to='/login' className="label-text-alt link link-hover text-emerald-700">
