@@ -27,7 +27,7 @@ import RecipeDetails from '../Pages/Home/Main/RecipeDetails';
               element: <Register></Register>
             },
             {
-              path: '/',
+              path: '/home',
               element: <Home></Home>
             },
             {
