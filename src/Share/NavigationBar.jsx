@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
 import { AuthContext } from '../Providers/AuthProvider';
-import logo from '../assets/logo.png'
+
 
 
 
@@ -23,7 +23,7 @@ const NavigationBar = () => {
            
             <Link to='/home' className='inline-flex items-center relative navbar-start'>
                 
-                <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'><img className='w-1/6 rounded-full' src={logo} alt="" /></span>
+                <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
             </Link>
 
             {/* nav item */}
