@@ -1,11 +1,12 @@
 import React, {  useContext, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import {FaGithub, FaGoogle } from 'react-icons/fa';
 import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../../../../assignment-11/disney-magic-toys/src/hooks/useTitle';
 const auth =getAuth(app)
 const Register = () => {
+    useTitle('Register')
     const {createUser,userDetails} = useContext(AuthContext);
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/home';

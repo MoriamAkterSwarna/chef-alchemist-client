@@ -21,7 +21,7 @@ const NavigationBar = () => {
         <>
         <div className='bg-gray-100 flex justify-between items-center p-5 rounded sm:max-w-xl md:max-w-full  md:px-24 lg:px-8'>
            
-            <Link to='/home' className='inline-flex items-center relative navbar-start'>
+            <Link to='/' className='inline-flex items-center relative navbar-start'>
                 
                 <span className='title-text ml-2 text-2xl font-bold tracking-wide text-gray-800'>Cooking Alchemist</span>
             </Link>
@@ -29,7 +29,7 @@ const NavigationBar = () => {
             {/* nav item */}
             <ul className='lg:flex space-x-8 items-center font-bold hidden navbar-center'>
                 <li>
-                    <NavLink to='/home' 
+                    <NavLink to='/' 
                     title='Home'
                     className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                 </li>
@@ -78,7 +78,7 @@ const NavigationBar = () => {
                   <div>
                     <Link to='/' className='inline-flex items-center'>
                       <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                       Cooking Alchemist
+                       Disney Magic Toys
                       </span>
                     </Link>
                   </div>
@@ -97,7 +97,7 @@ const NavigationBar = () => {
                 <nav>
                   <ul className='space-y-4'>
                     <li>
-                    <NavLink to='/home' 
+                    <NavLink to='/' 
                     title='Home'
                     className={({isActive}) => (isActive ? 'active' : 'default')}>Home</NavLink>
                     </li>
